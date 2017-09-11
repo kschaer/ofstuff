@@ -1,7 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
-#define NUM = 40
+#include "mountain.h"
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -21,10 +22,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-    float colorTime[100];
-    ofPoint position[100][100];
-    float radii[100][100];
-    float posX[100];
-    float posY[100];
-    float bouncy;
+    mountain myMountain[20];
+    
 };

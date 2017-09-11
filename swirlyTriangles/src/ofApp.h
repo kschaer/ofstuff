@@ -1,7 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
-#define NUM = 40
+#include "circle.h"
+#define NUM 10
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -20,11 +22,8 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+        //circle myCircles[100];
+        mountain myMountain[20];
 		
-    float colorTime[100];
-    ofPoint position[100][100];
-    float radii[100][100];
-    float posX[100];
-    float posY[100];
-    float bouncy;
 };
