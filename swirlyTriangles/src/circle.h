@@ -24,12 +24,13 @@ public:
     float mountainHeight;
     
     ofColor color;
-//    
-//    ofPoint pos;
-//    ofPoint vel;
-//    
-//    float radius;
-//    ofColor color;
+    float colMod;
+    //
+    //    ofPoint pos;
+    //    ofPoint vel;
+    //
+    //    float radius;
+    //    ofColor color;
     
     
     
