@@ -20,15 +20,16 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+    ofColor color;
+    float time;
+    float sinTime;
+    float cosTime;
+    
+    float width;
+    float height;
+    
+    float radius;
+    
 		
-    
-    float squareSize;
-    
-    float pageSize;
-    float squareOffset;
-    int numSquares;
-    int numZ;
-    float jitter;
-    float jitter2;
-    
 };

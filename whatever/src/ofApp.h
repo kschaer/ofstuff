@@ -22,13 +22,21 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
     
-    float squareSize;
+    float radius;
+    float angle;
     
-    float pageSize;
-    float squareOffset;
-    int numSquares;
-    int numZ;
-    float jitter;
-    float jitter2;
+    float time;
+    float startTime;
+    float endTime;
+    float duration;
+    float sinTime;
+    float cosTime;
+    int numPoints;
+    
+    float mappedMouseX;
+    float mappedMouseY;
+    
+    float opacity;
+    ofColor color;
     
 };

@@ -2,67 +2,49 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(235, 235, 235);
-    ofSetColor(20);
-    squareSize = 120;
-    numSquares = 6;
-    numZ = 10;
-    jitter = 0;
-    jitter2 = 0;
-    float jitter3 = 0;
-    float jitter4 = 0;
-    squareOffset = 0;
-    //ofNoFill();
+    ofNoFill();
+    ofBackground(10);
+    color.r = 255;
+    color.g = 255;
+    color.b = 255;
     
+    ofColor(color);
+    
+    time = 0;
+    cosTime = 0;
+    sinTime = 0;
+    
+    width = ofGetWidth();
+    height = ofGetHeight();
+    
+    ofSetCircleResolution(150);
+    radius = 300;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofPushMatrix();
-    ofTranslate(100,100);
-    for (int i = 0; i<61; i++){
-        for (int j = 0; j<40; j++){
-            jitter = cos(.01*(39-i)*(20-j)*ofGetElapsedTimef());
-            ofDrawCircle(10+13*i+jitter, 10+20*j-jitter, 3);
-        }
+    for (int i = 0; i <25; i++){
+        time = ofGetElapsedTimef();
+        sinTime = sin(.25*time-i);
+        cosTime = cos(time-i);
+        radius = 200+(mouseX-30*i)*sin(.4*time);
+        
+        ofSetLineWidth(30%(i+1));
+        
+        color.r = 127+127*sinTime;
+        color.g = 255-ofMap(mouseY, 0, height, 0, 255);
+        color.b = 127+127*cosTime;
+        ofSetColor(color);
+        ofDrawCircle(width/2, height/2, radius);
         
     }
-    ofPopMatrix();
-    
-    ofPushMatrix();
-    
-    ofTranslate(200,200);
-    ofRotate(.005*mouseY);
-    for (int i = 0; i<60; i++){
-        for (int j = 0; j<30; j++){
-            
-            jitter = sin(-i*.2*(ofGetElapsedTimef()*.5));
 
-            ofDrawCircle(10+13*i-.5*jitter, .25*jitter+10+20*j, 3);
-        }
-        
-    }
-    
-    
-    ofPopMatrix();
-    ofPushMatrix();
-    ofTranslate(10,280);
-    ofRotate(.005*mouseX);
-    for (int i = 0; i<40; i++){
-        for (int j = 0; j<30; j++){
-            jitter = cos(.2*(i-j)*ofGetElapsedTimef());
-
-            ofDrawCircle(10+13*i-jitter, 10+20*j+jitter, 3);
-        }
-    }
-    
-    
-    ofPopMatrix();
 }
 
 //--------------------------------------------------------------
